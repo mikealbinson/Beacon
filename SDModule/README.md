@@ -1,4 +1,5 @@
 #SDModule
+An upper level module to control searching an SD card database for ticket information
 
 ##SDReplaceFunction.js
 An unimplemented function for the SdSearch module
