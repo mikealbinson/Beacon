@@ -23,7 +23,7 @@ Manages the initialization and manipulation of the LEDs and the buzzer--all expo
 --One of the more major issues we arrive at here is the lack of ability of the Edison to control its PWM pulses, which results in inconsistent sounds and occasional failure to fully turn off the buzzer, resulting in a high pitched beep that can only be reset by sending a subsequent pulse.
 
 ##OledDisplay.js
-An upper level manager of the OLED driver--controls deconstructing and passing images to the driver
+An upper level manager of the OLED driver--controls deconstructing and passing images to the driver (it's within the oled directory)
 
 | Function Name            | Description                                                                           | Arguments | Returns | Note                                          |
 |--------------------------|---------------------------------------------------------------------------------------|-----------|---------|-----------------------------------------------|
