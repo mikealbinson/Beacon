@@ -1,5 +1,5 @@
 #oled
-The driver for the SSD1306 oled, built on the libmraa. Only the upper level of the driver is documented
+The driver for the SSD1306 oled, built on the libmraa. Only the upper level functions to display images are documented. There are not currently implementations for anything but displaying images in .png format.
 
 ##OledDisplay.js
 An upper level manager of the OLED driver--controls deconstructing and passing images to the driver (it's within the oled directory)
