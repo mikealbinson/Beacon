@@ -1,6 +1,9 @@
 #Ultrasonic
 
 ##Ultrasonic.js
+|Function Name|Description|Arguments|Returns|Note|
+|-------------|-----------|---------|-------|----|
+
 
 ##UltrasonicSensor.js
 Controls and sets up reading the ultrasonic. 
