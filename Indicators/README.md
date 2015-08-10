@@ -1,6 +1,8 @@
 #Indicators
 Manages the initialization and manipulation of the LEDs and the buzzer--all exported functions come through the **Indicators.js** file, all the other files support the module
 
+##Indicators
+
 ##LedsAndBuzzer.js
 #####Buzzer Functions
 | Function Name      | Description                                            | Arguments | Returns | Note                                                                                                                                                                                                                                                                                                                                                                  |
