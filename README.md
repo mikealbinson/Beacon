@@ -50,7 +50,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |onleavenoAdmitVOI |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 |onleavenoAdmit |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 
-See javascript-state-machine:https://github.com/jakesgordon/javascript-state-machine for more information
+See [javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine) for more information
 
 ##Images
 The necessary images for the OledDisplay module
