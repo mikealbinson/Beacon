@@ -59,6 +59,14 @@ These functions (with the exception of `__endFlagMarker()` ) are triggered by ev
 
 See [javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine) for more information on how states and events work in the machine. 
 
+##executiveShellCommands.js
+A module that resets all the bluetooth daemons before allowing the program to continue.
+
+|Function Name     |Description   |Arguments      | Returns     | Note    |
+|------------------|--------------|---------------|-------------|---------|
+|clearBluetoothCache()|Removes all bluetooth daemons| N/A|N/A|N/A|
+|nextCommand()|Reconfigures the bluetooth socket and the bluetooth daemon|N/A|N/A|N/A|
+
 ##Images
 The necessary images for the OledDisplay module
 
