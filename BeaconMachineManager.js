@@ -311,3 +311,5 @@ BeaconManager.start(); //init the machine
 function __endFlagMarker(){
 	__endNoAdmitFlag = true;
 }
+
+//I wanted to add a comment here

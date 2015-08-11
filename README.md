@@ -67,6 +67,19 @@ A module that resets all the bluetooth daemons before allowing the program to co
 |clearBluetoothCache()|Removes all bluetooth daemons| N/A|N/A|N/A|
 |nextCommand()|Reconfigures the bluetooth socket and the bluetooth daemon|N/A|N/A|N/A|
 
+##BLEandBeacon.js
+A module that manages the creation and broadcast of bluetooth services. I will briefly cover all of my added functions. I will not cover the beacon callbacks here, or any built in functions. For information on those, see [bleno](https://github.com/sandeepmistry/bleno).
+
+|Function Name     |Description   |Arguments      | Returns     | Note    |
+|------------------|--------------|---------------|-------------|---------|
+| __startAdvertisingIbeacon() |Begins broadcasting a beacon data packet and sets a timeout to switch to `__startAdvertisingBle()` |N/A |N/A |N/A | 
+| __stopAdvertisingIbeacon() |Stops the iBeacon broadcast  |N/A |N/A |N/A | 
+| __startAdvertisingBle() |Begins broadcasting a regular BLE data packet and sets a timeout to switch to `__startAdvertisingIbeacon()`  |N/A |N/A |N/A |  
+| __stopAdvertisingBle() |Stops the BLE broadcast |N/A |N/A |N/A |  
+| beginBroadcasting()|Initializes the entire beacon and begins the alteration between iBeacon and BLE | N/A |N/A |N/A | 
+| resetDataString() |Periodically resets the exported dataString so that the BeaconManager isn’t triggered to switch states without a new ticket-string being found | N/A |N/A |N/A |  
+
+
 ##Images
 The necessary images for the OledDisplay module
 
