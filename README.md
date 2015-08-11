@@ -41,7 +41,7 @@ The events that cause state changes in the machine. An event can be triggered by
 |cutToCheckDatabase  |moves the machine from the `noAdmit` state to the `checkingDatabase` state  |N/A  |  
 
 #####Functions (onEVENT or onSTATE)
-These functions (with the exception of __endFlagMarker() ) are triggered by events or state changes. They are **not** accessable out of this context unless you explicitly redefine the body of these functions later in the code.
+These functions (with the exception of `__endFlagMarker()` ) are triggered by events or state changes. They are **not** accessable out of this context unless you explicitly redefine the body of these functions later in the code.
 
 |Function Name     |Description   |Arguments      | Returns     | Note    |
 |------------------|--------------|---------------|-------------|---------|
@@ -58,6 +58,14 @@ These functions (with the exception of __endFlagMarker() ) are triggered by even
 |onleavenoAdmit |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 
 See [javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine) for more information on how states and events work in the machine. 
+
+##executiveShellCommands.js
+A module that resets all the bluetooth daemons before allowing the program to continue.
+
+|Function Name     |Description   |Arguments      | Returns     | Note    |
+|------------------|--------------|---------------|-------------|---------|
+|clearBluetoothCache()|Removes all bluetooth daemons| N/A|N/A|N/A|
+|nextCommand()|Reconfigures the bluetooth socket and the bluetooth daemon|N/A|N/A|N/A|
 
 ##Images
 The necessary images for the OledDisplay module
