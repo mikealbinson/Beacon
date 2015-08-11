@@ -7,8 +7,10 @@ I'll break this down by file. If there are any questions/issues, feel free to dr
 The highest up in the file heirarchy of the program. This is where the magic happens. It initiates, manages and listens to all of the different processes (indicators, bluetooth, ultrasonic, etc.) depending on the state of the machine. A more thorough documentation is below.
 
 #### A brief rundown of the states, events and functions (anonymous and not) of BeaconMachineManager
+For the sake of readaility I have only written about the event and state changes where I have implemented something--There are *many* more event/state changes that can be utilized within the state machine module. I have coded most of them in, but they remain empty at this point because I had no need for them
 
 #####States
+The different states that the machine can be in
 |State Name     |Description   | Note    |
 |---------------|--------------|---------|
 |none  |Initial state of the machine before being initialized |Cannot be returned to after starting the machine  |
@@ -22,6 +24,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 
 
 ##### Events
+The events that cause state changes in the machine. An event can be triggered by calling `BeaconManager.EVENT()` anywhere in the program.
 |Event Name     |Description   | Note    |
 |---------------|--------------|---------|
 |start  |moves the machine from the `none` state to the `init` state  |N/A  |  
@@ -35,7 +38,9 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |cutToNoAdmit  |moves the machine from the `default` state to the `noAdmit` state  |N/A  |  
 |cutToCheckDatabase  |moves the machine from the `noAdmit` state to the `checkingDatabase` state  |N/A  |  
 
-#####Fucntions (and On State Change 
+#####Functions (onEVENT or onSTATE)
+These functions (with the exception of __endFlagMarker() ) are triggered by events or state changes. They are **not** accessable out of this context unless you explicitly redefine the body of these functions later in the code.
+
 |Function Name     |Description   |Arguments      | Returns     | Note    |
 |------------------|--------------|---------------|-------------|---------|
 |__endFlagMarker()  |Used to mark that the indicators have been on long enough for the noAdmit state and that the manager should return to the default state  |N/A  |N/A  |N/A  |
@@ -50,7 +55,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |onleavenoAdmitVOI |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 |onleavenoAdmit |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 
-See [javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine) for more information
+See [javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine) for more information on how states and events work in the machine. 
 
 ##Images
 The necessary images for the OledDisplay module
