@@ -3,7 +3,8 @@
 ##Ultrasonic.js
 |Function Name|Description|Arguments|Returns|Note|
 |-------------|-----------|---------|-------|----|
-
+|startUsingUltrasonic|Takes a filtered reading from the ultrasonic, sets a timeout to call itself later on and exports the reading to the BeaconManager |N/A|N/A|Identical to `__startUsingUltrasonic()`|
+|__startUsingUltrasonic()|See above|N/A|N/A|N/A|
 
 ##UltrasonicSensor.js
 Controls and sets up reading the ultrasonic. 
