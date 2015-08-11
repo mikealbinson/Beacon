@@ -4,7 +4,7 @@
 I'll break this down by file. If there are any questions/issues, feel free to drop me a line.
 
 ##BeaconMachineManager
-The highest up in the file heirarchy of the program. This is where the magic happens. It initiates, manages and listens to all of the different processes (indicators, bluetooth, ultrasonic, etc.) depending on the state of the machine. A more thorough documentation frill follow.
+The highest up in the file heirarchy of the program. This is where the magic happens. It initiates, manages and listens to all of the different processes (indicators, bluetooth, ultrasonic, etc.) depending on the state of the machine. A more thorough documentation is below.
 
 #### A brief rundown of the states, events and functions (anonymous and not) of BeaconMachineManager
 
@@ -49,6 +49,8 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |onleaveadmitVIP  |Displays the ticketfly logo and returns to default   |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
 |onleavenoAdmitVOI |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 |onleavenoAdmit |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
+
+See javascript-state-machine:https://github.com/jakesgordon/javascript-state-machine for more information
 
 ##Images
 The necessary images for the OledDisplay module
