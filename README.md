@@ -41,7 +41,7 @@ The events that cause state changes in the machine. An event can be triggered by
 |cutToCheckDatabase  |moves the machine from the `noAdmit` state to the `checkingDatabase` state  |N/A  |  
 
 #####Functions (onEVENT or onSTATE)
-These functions (with the exception of __endFlagMarker() ) are triggered by events or state changes. They are **not** accessable out of this context unless you explicitly redefine the body of these functions later in the code.
+These functions (with the exception of `__endFlagMarker()` ) are triggered by events or state changes. They are **not** accessable out of this context unless you explicitly redefine the body of these functions later in the code.
 
 |Function Name     |Description   |Arguments      | Returns     | Note    |
 |------------------|--------------|---------------|-------------|---------|
