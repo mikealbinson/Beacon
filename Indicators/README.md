@@ -3,6 +3,15 @@ Manages the initialization and manipulation of the LEDs and the buzzer--all expo
 
 ##Indicators
 
+|Function Name | Description    | Arguments | Returns | Note|
+|--------------|----------------|-----------|---------|-----|
+| defaultTicketflyLogo()|Displays the Ticketfly Logo |N/A |N/A |Currently doesn’t work on startup of the machine—may be because the OLED has not yet fully init-ed |
+|AdmitVIP()|Displays the admit-VIP indicators (LED, buzzer, OLED) |N/A |N/A |N/A |
+| AdmitGeneral()|Displays the admit-General indicators |N/A |N/A |N/A |
+|NoAdmit() |Displays the noAdmit-General indicators |N/A |N/A |N/A |
+|NoAdmitVoid() |Displays the noAdmit-Void indicators |N/A |N/A |N/A |
+|killAllNoAdmitIndicators() |clears all noAdmit indicators |N/A |N/A |Used in the case of the noAdmit->checkingDatabase interrupt |
+
 ##LedsAndBuzzer.js
 #####Buzzer Functions
 | Function Name      | Description                                            | Arguments | Returns | Note                                                                                                                                                                                                                                                                                                                                                                  |
