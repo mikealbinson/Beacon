@@ -10,30 +10,13 @@ var timeoutFlag = false;
 Ultrasonic.initUltrasonic();
 
 exports.startUsingUltrasonic = function(){
-  //if (timeoutFlag == false) {
-    Ultrasonic.takeUSReading();
-  //}
-  //else {
-  	//setTimeout(__resetTimeoutFlag, 1500);
-  //}
+  Ultrasonic.takeUSReading();
   setTimeout(__startUsingUltrasonic, 5);
   exports.indicatorFlag = Ultrasonic.indicatorFlag;
 }
 
 function __startUsingUltrasonic(){
-   //if (timeoutFlag == false) {
-    Ultrasonic.takeUSReading();
-  //}
-  //else {
-    //setTimeout(__resetTimeoutFlag, 1500);
-  //}
+  Ultrasonic.takeUSReading();
   setTimeout(__startUsingUltrasonic, 5);
   exports.indicatorFlag = Ultrasonic.indicatorFlag;
 }
-
-/*
-function __resetTimeoutFlag (){
-  console.log("US armed")
-  timeoutFlag = false;
-}
-*/
