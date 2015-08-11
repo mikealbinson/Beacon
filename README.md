@@ -36,7 +36,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 
 
 |Function Name     |Description   |Arguments      | Returns     | Note    |
-|--|--|--|--|--|
+|------------------|--------------|---------------|-------------|---------|
 |__endFlagMarker()  |Used to mark that the indicators have been on long enough for the noAdmit state and that the manager should return to the default state  |N/A  |N/A  |N/A  |
 |ondefault  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function** |
 |oncheckingDatabase  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
