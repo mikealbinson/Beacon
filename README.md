@@ -87,19 +87,19 @@ The necessary images for the OledDisplay module
 Oled, LED and buzzer control functions. See the directory for its specific README
 
 ##node_modules
-* **Bleno**:
+* **[bleno](https://github.com/sandeepmistry/bleno)**:
   The javascript beacon API
-* **line-reader**:
+* **[line-reader](https://github.com/nickewing/line-reader)**:
   As it sounds, used in SdSearch to 
-* **png-to-lcd**:
+* **[png-to-lcd](https://github.com/noopkat/png-to-lcd)**:
   Used to convert png images to lcd compatible bitmaps
-* **replace**:
+* **[replace](https://github.com/harthur/replace)**:
   Used to aid the unimplemented SDReplaceFunction
-* **segfault-handler**:
+* **[segfault-handler](https://github.com/ddopson/node-segfault-handler)**:
   Used to catch and manage unexpected segfaults
-* **exec**:
+* **[exec](https://github.com/bahamas10/node-exec)**:
   Used to execute shell commands from within the script
-* **javascript-state-machine**:
+* **[javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine)**:
   State machine--overall controller for state changes
 
 #Future suggestions
