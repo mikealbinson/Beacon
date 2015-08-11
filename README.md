@@ -1,7 +1,7 @@
 # Beacon
 ###An implementation of iBeacon technology to take ticket information, verify that the information exists in a database and display the result--Updated from Tfly_Beacon
 
-I'll break this down by file. If there are any questions/issues, feel free to drop me a line.
+I'll break this down by file. If there are any questions/issues, feel free to drop me a line. See specific folders for their individual documentations.
 
 ##BeaconMachineManager
 The highest up in the file heirarchy of the program. This is where the magic happens. It initiates, manages and listens to all of the different processes (indicators, bluetooth, ultrasonic, etc.) depending on the state of the machine. A more thorough documentation is below.
@@ -82,9 +82,6 @@ A module that manages the creation and broadcast of bluetooth services. I will b
 
 ##Images
 The necessary images for the OledDisplay module
-
-##Indicators
-Oled, LED and buzzer control functions. See the directory for its specific README
 
 ##node_modules
 * **[bleno](https://github.com/sandeepmistry/bleno)**:
