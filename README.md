@@ -28,7 +28,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |beginDefault  |moves the machine from the `init` state to the `default` state  |N/A  | 
 |toCheckDatabase  |moves the machine from the `default` state to the `checkingDatabase` state  |N/A  | 
 |toAdmitGeneral  |moves the machine from the `checkingDatabase ` state to the `admitGEN` state  |N/A  | 
-|returnToDefault  |  |N/A  |  
+|returnToDefault  |moves the machine from any of the `admit`/`noAdmit` states to `default`   |N/A  |  
 |toAdmitVIP  |moves the machine from the `checkingDatabase ` state to the `admitVIP` state  |N/A  |  
 |toNoAdmitVOI  |moves the machine from the `checkingDatabase ` state to the `noAdmitVOI` state  |N/A  |  
 |noAdmitNormal  |moves the machine from the `checkingDatabase ` state to the `noAdmit` state  |N/A  |  
@@ -39,8 +39,8 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |Function Name     |Description   |Arguments      | Returns     | Note    |
 |------------------|--------------|---------------|-------------|---------|
 |__endFlagMarker()  |Used to mark that the indicators have been on long enough for the noAdmit state and that the manager should return to the default state  |N/A  |N/A  |N/A  |
-|ondefault  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function** |
-|oncheckingDatabase  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|ondefault  |Listens for a deviation in the ultrasonic (which then pushes the machine to a noAdmit state), or a new ticket-string from the BLE (which then causes a shift to the checkingDatabase state) using an `async.whilst()` loop.  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function** |
+|oncheckingDatabase  |Uses an `async.whilst()` loop to listen as the SDSearch function searches the database for a match for the inputted ticket string. If the search is successful, the manager pushes to the appropriate `admit`/`noAdmit` state. If it is not, the manager pushes to the `noAdmit` state. |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
 |onadmitGEN  |Displays the Admit-General indicators and calls a return to default   |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
 |onadmitVIP  |Displays the Admit-VIP indicators and calls a return to default   |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
 |onnoAdmitVOI  |Displays the noAdmit-Void indicators and calls a return to default  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
