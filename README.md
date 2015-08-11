@@ -9,7 +9,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 #### A brief rundown of the states, events and functions (anonymous and not) of BeaconMachineManager
 
 |State Name     |Description   | Note    |
-|——————————————————|——————————————|———————————————|
+|———————————————|——————————————|—————————|
 |none  |Initial state of the machine before being initialized |Cannot be returned to after starting the machine  |
 |init  |The beacon initializes itself and all of its peripherals | Cannot be returned to after starting the machine  |
 |default  |The manager monitors the bluetooth for a received ticket-string, it also monitors the ultrasonic for a deviation  |N/A  | 
@@ -22,7 +22,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 
 
 |Event Name     |Description   | Note    |
-|——————————————————|——————————————|—————————|
+|---------------|--------------|---------|
 |start  |moves the machine from the `none` state to the `init` state  |N/A  |  
 |beginDefault  |moves the machine from the `init` state to the `default` state  |N/A  | 
 |toCheckDatabase  |moves the machine from the `default` state to the `checkingDatabase` state  |N/A  | 
