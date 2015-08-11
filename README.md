@@ -3,20 +3,14 @@
 
 I'll break this down by file. If there are any questions/issues, feel free to drop me a line.
 
-##iBeaconWrite_V2_7.js
-The highest up in the file heirarchy of the program. This is where the magic happens. This portion has three main tasks:
-1. Performing two shell commands that reset the bluetooth daemon of the Edison
-2. Beginning the intialiazation of the rest of the files in the heirarchy
-3. Initalizing and managing the iBeacon and BLE services and events of the beacon
-
-## UUID_Strings.txt
-An example file of the structures necessary to read ticket strings with the SdSearch module
+##BeaconMachineManager
+The highest up in the file heirarchy of the program. This is where the magic happens. It initiates, manages and listens to all of the different processes (indicators, bluetooth, ultrasonic, etc.) depending on the state of the machine. A more thorough documentation frill follow.
 
 ##Images
 The necessary images for the OledDisplay module
 
-##Node_Indicators
-The OLED driver and bindings
+##Indicators
+Oled, LED and buzzer control functions. See the directory for its specific README
 
 ##node_modules
 * **Bleno**:
@@ -34,11 +28,8 @@ The OLED driver and bindings
 * **javascript-state-machine**:
   State machine--overall controller for state changes
 
-
 #Future suggestions
 See the issues section
 
-
 #Relevant Documentation 
-
 Maxsonar EZ: http://www.maxbotix.com/documents/HRLV-MaxSonar-EZ_Datasheet.pdf
