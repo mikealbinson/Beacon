@@ -9,7 +9,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 #### A brief rundown of the states, events and functions (anonymous and not) of BeaconMachineManager
 
 |State Name     |Description   | Note    |
-|———————————————|——————————————|—————————|
+|---------------|--------------|---------|
 |none  |Initial state of the machine before being initialized |Cannot be returned to after starting the machine  |
 |init  |The beacon initializes itself and all of its peripherals | Cannot be returned to after starting the machine  |
 |default  |The manager monitors the bluetooth for a received ticket-string, it also monitors the ultrasonic for a deviation  |N/A  | 
@@ -36,7 +36,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 
 
 |Function Name     |Description   |Arguments      | Returns     | Note    |
-|——————————————————|——————————————|———————————————|—————————————|—————————|
+|--|--|--|--|--|
 |__endFlagMarker()  |Used to mark that the indicators have been on long enough for the noAdmit state and that the manager should return to the default state  |N/A  |N/A  |N/A  |
 |ondefault  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function** |
 |oncheckingDatabase  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
