@@ -8,6 +8,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 
 #### A brief rundown of the states, events and functions (anonymous and not) of BeaconMachineManager
 
+#####States
 |State Name     |Description   | Note    |
 |---------------|--------------|---------|
 |none  |Initial state of the machine before being initialized |Cannot be returned to after starting the machine  |
@@ -20,7 +21,7 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |noAdmit  |Displays the no admit indicators and returns to default  |N/A   | 
 
 
-
+##### Events
 |Event Name     |Description   | Note    |
 |---------------|--------------|---------|
 |start  |moves the machine from the `none` state to the `init` state  |N/A  |  
@@ -34,22 +35,20 @@ The highest up in the file heirarchy of the program. This is where the magic hap
 |cutToNoAdmit  |moves the machine from the `default` state to the `noAdmit` state  |N/A  |  
 |cutToCheckDatabase  |moves the machine from the `noAdmit` state to the `checkingDatabase` state  |N/A  |  
 
-
+#####Fucntions (and On State Change 
 |Function Name     |Description   |Arguments      | Returns     | Note    |
 |------------------|--------------|---------------|-------------|---------|
 |__endFlagMarker()  |Used to mark that the indicators have been on long enough for the noAdmit state and that the manager should return to the default state  |N/A  |N/A  |N/A  |
 |ondefault  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function** |
 |oncheckingDatabase  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onadmitGEN  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onadmitVIP  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onnoAdmitVOI  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onnoAdmit  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onleavedefault  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onleavecheckingDatabase  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onleaveadmitGEN  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onleaveadmitVIP  |  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
-|onleavenoAdmitVOI | |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
-|onleavenoAdmit | |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
+|onadmitGEN  |Displays the Admit-General indicators and calls a return to default   |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|onadmitVIP  |Displays the Admit-VIP indicators and calls a return to default   |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|onnoAdmitVOI  |Displays the noAdmit-Void indicators and calls a return to default  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|onnoAdmit  |Displays the noAdmit indicators and calls a return to default. **Also** listens for a received ticket from the BLE and transfers to the checkingDatabase state if one is found--Basically allows for an interrupt of this state if accidentally triggered by the ultrasonic even if the person has a ticket  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|onleaveadmitGEN  |Displays the ticketfly logo and returns to default  |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|onleaveadmitVIP  |Displays the ticketfly logo and returns to default   |N/A  |N/A  |**Cannot be called in the script, as it is an anonymous function**   |
+|onleavenoAdmitVOI |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
+|onleavenoAdmit |Displays the ticketfly logo and returns to default  |N/A |N/A |**Cannot be called in the script, as it is an anonymous function**  |
 
 ##Images
 The necessary images for the OledDisplay module
