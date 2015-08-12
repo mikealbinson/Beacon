@@ -98,7 +98,7 @@ The necessary images for the OledDisplay module
   Used to execute shell commands from within the script
 * **[javascript-state-machine](https://github.com/jakesgordon/javascript-state-machine)**:
   State machine--overall controller for state changes
-* **[libmraa](https://github.com/intel-iot-devkit/mraa)**
+* **[libmraa](https://github.com/intel-iot-devkit/mraa)**:
   Standard bindings for the microcontroller’s SPI and I2C busses
 
 #Future suggestions
