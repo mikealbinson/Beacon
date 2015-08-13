@@ -6,7 +6,7 @@ var __readMEEE = [];
 var __counter = 0;
 var __counterFlag = false;
 var __indicatorFlag = true;
-var __voltageReaderPin = 0;
+var __voltageReaderPin;
 var __calibrationFlag = false;
 var __defaultCalibration = 150;
 
@@ -16,7 +16,7 @@ exports.initUltrasonic = function(){
 	__voltageReaderPin = new mraa.Aio(0);
 }
 
-exports.takeUSReading = function(){ //takes several measurements and filters them
+exports.takeUSReading = function(){ //takes several measurements from the ultrasonic and filters them
 	__readMEEE[0] = __voltageReaderPin.read();
 	__readMEEE[1] = __voltageReaderPin.read();
 	__readMEEE[2] = __voltageReaderPin.read();

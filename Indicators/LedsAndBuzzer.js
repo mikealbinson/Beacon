@@ -7,6 +7,9 @@ var mraa = require('mraa');
  ******************************************************************************/
 var buzzPin = new mraa.Pwm(5);
 
+var timeoutOne;
+var timeoutTwo;
+
 function buzzAdmitNote1(){
     buzzPin.period (1000);
     buzzPin.write(.3);

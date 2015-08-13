@@ -10,7 +10,7 @@ var fs = require('fs');
 var __filePathToUse = "";
 var __sdFilepath = "/media/sdcard/"
 var __defaultFile = "/media/sdcard/UUID_Strings.txt";
-__fileName();
+__setFileName();
 
 var foundType = "none"; 
 exports.foundType = foundType;
@@ -95,7 +95,7 @@ function __TypeLogic (TicketTypeRetrieve){
   }
 }
 
-function __fileName(){
+function __setFileName(){
   var arguments = process.argv;
   var actualArguments = arguments.slice(2);
   if (actualArguments[0] != undefined){

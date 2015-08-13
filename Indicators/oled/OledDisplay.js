@@ -21,7 +21,6 @@ function __startOled()
 { 
   __OLED.init();
   //Display the image
-  __clearOLEDScreen();
   __displayTicketflyLogo();
   console.log('oled init done');
 }
