@@ -26,7 +26,7 @@ var WriteOnlyCharacteristic = function() {
 
 util.inherits(WriteOnlyCharacteristic, BlenoCharacteristic);
 
-WriteOnlyCharacteristic.prototype.onWriteRequest = function(data, offset, withoutResponse, callback) {
+WriteOnlyCharacteristic.prototype.onWriteRequest = function(data, offset, withoutResponse, callback){
   dataString = data.toString('utf8');
   console.log(dataString);
   exports.dataString = dataString;

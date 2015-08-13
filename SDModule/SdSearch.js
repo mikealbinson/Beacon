@@ -24,35 +24,15 @@ exports.searchForTicketString = function (stringToFind, typeToSearch){
     var commaIndex2 = line.indexOf(',', commaIndex1+1);
     if (foundFlag == false){
       if (typeToSearch == 1){
-        var TicketNumberRetrieve = line.substring (0, commaIndex1);
-        console.log(TicketNumberRetrieve);
-        if (stringToFind == TicketNumberRetrieve){
-          foundFlag = true;
-          var TicketTypeRetrieve = line.substring (commaIndex2+1, lengthString-1);
-          __TypeLogic(TicketTypeRetrieve)
-        }
+        __searchByTicketUUID(line, commaIndex1, commaIndex2, stringToFind);
       }
       else if (typeToSearch == 2){
-        var TicketNameRetrieve = line.substring (commaIndex1+1, commaIndex2);
-        console.log(TicketNameRetrieve);
-        if (stringToFind == TicketNameRetrieve){
-          foundFlag = true;
-          if (stringToFind == TicketNumberRetrieve){
-            var TicketTypeRetrieve = line.substring (commaIndex2+1, lengthString-1);
-            __TypeLogic(TicketTypeRetrieve)
-          }
-        }
+        __searchByTicketName(line, commaIndex1, commaIndex2, stringToFind);
       }
       /*  --really no need for this implementation (search by type)... doesn't really serve a purpose
-      //  but I'll leave it in case someone wants the base logic. __TypeLogic goes 
-      // through everything more exhaustively-- but hey, here this is
+      //  but I'll leave it in case someone wants the base logic. See __searchByTicketType() if you want.
       else if (typeToSearch == 3){
-        var TicketTypeRetrieve = line.substring (commaIndex2+1, lengthString);
-        console.log(TicketTypeRetrieve);
-        if (stringToFind == TicketTypeRetrieve){
-          foundFlag = true;
-          __successfulSearch();
-        }
+        __searchByTicketType(line, commaIndex2, lengthString, stringToFind)
       }
       */
       else{
@@ -112,3 +92,35 @@ function __setFileName(){
 function __resetFoundType (){
   exports.foundType = "none"
 }
+
+function __searchByTicketUUID(line, commaIndex1, commaIndex2, stringToFind){
+  var TicketNumberRetrieve = line.substring (0, commaIndex1);
+  console.log(TicketNumberRetrieve);
+  if (stringToFind == TicketNumberRetrieve){
+    foundFlag = true;
+    var TicketTypeRetrieve = line.substring (commaIndex2+1, lengthString-1);
+    __TypeLogic(TicketTypeRetrieve)
+  }
+}
+
+function __searchByTicketName(line, commaIndex1, commaIndex2, stringToFind){
+  var TicketNameRetrieve = line.substring (commaIndex1+1, commaIndex2);
+  console.log(TicketNameRetrieve);
+  if (stringToFind == TicketNameRetrieve){
+    foundFlag = true;
+    if (stringToFind == TicketNumberRetrieve){
+      var TicketTypeRetrieve = line.substring (commaIndex2+1, lengthString-1);
+      __TypeLogic(TicketTypeRetrieve)
+    }
+  }
+}
+/*
+function __searchByTicketType(line, commaIndex2, lengthString, stringToFind){
+  var TicketTypeRetrieve = line.substring (commaIndex2+1, lengthString);
+        console.log(TicketTypeRetrieve);
+        if (stringToFind == TicketTypeRetrieve){
+          foundFlag = true;
+          __TypeLogic(TicketTypeRetrieve);
+        }
+}
+*/ //depreciated method

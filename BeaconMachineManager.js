@@ -5,8 +5,7 @@ var StateMachine = require('javascript-state-machine');
 var ticketStringHolder = "";
 var ticketTypeHolder = "";
 var transitionFlag = false;
-var transitionFunction;
-var checkerStateFunction = "none";
+var switchToCheckerStateOrNoAdmitStateMarker = "none";
 var toSearchDatabaseSwitchFlag = false;
 var __endNoAdmitFlag = false;
 var __noAdmitToCheckingFlag = false;
@@ -68,7 +67,7 @@ var BeaconManager = StateMachine.create({
 	  indicators.defaultTicketflyLogo();
 	  ultrasonic.startUsingUltrasonic();
 	  bleAndIbeacon.beginBroadcasting();
-	  checkerStateFunction = "none";
+	  switchToCheckerStateOrNoAdmitStateMarker = "none";
 	  BeaconManager.beginDefault();
     },
 
@@ -166,14 +165,14 @@ var BeaconManager = StateMachine.create({
 					if (bleAndIbeacon.dataString != "" && ticketStringHolder != bleAndIbeacon.dataString){
 						console.log("leave default");
 						ticketStringHolder = bleAndIbeacon.dataString;
-						checkerStateFunction = "checkingDatabase";
+						switchToCheckerStateOrNoAdmitStateMarker = "checkingDatabase";
 						return false;
 					}
 					if (ticketStringHolder == bleAndIbeacon.dataString && bleAndIbeacon.dataString != ""){
-						//console.log("repeat ticketstring--don't read again");
+						//console.log("repeat ticketstring--don't read again"); //for testing
 					}
 					if (ultrasonic.indicatorFlag == true){
-						checkerStateFunction = "noAdmit";
+						switchToCheckerStateOrNoAdmitStateMarker = "noAdmit";
 						return false;
 					}
 					else{
@@ -186,18 +185,18 @@ var BeaconManager = StateMachine.create({
 				},
 
 				function (err){
-					if (checkerStateFunction == "noAdmit"){
+					if (switchToCheckerStateOrNoAdmitStateMarker == "noAdmit"){
 						console.log("switched to noAdmit");
 						BeaconManager.cutToNoAdmit();
-						checkerStateFunction = "none";
+						switchToCheckerStateOrNoAdmitStateMarker = "none";
 					}
-					else if (checkerStateFunction == "checkingDatabase"){
+					else if (switchToCheckerStateOrNoAdmitStateMarker == "checkingDatabase"){
 						console.log("switched to checkingDatabase");
 						BeaconManager.toCheckDatabase();
-						checkerStateFunction = "none";
+						switchToCheckerStateOrNoAdmitStateMarker = "none";
 					}
 					else {
-						console.log("err, checkerStateFunction reads as: " + checkerStateFunction);
+						console.log("err, switchToCheckerStateOrNoAdmitStateMarker reads as: " + switchToCheckerStateOrNoAdmitStateMarker);
 					}
 				});
     },
@@ -290,7 +289,6 @@ var BeaconManager = StateMachine.create({
      			else {
 					setTimeout(function (){BeaconManager.returnToDefault()}, 3);
 					__endNoAdmitFlag = false;
-     				__noAdmitToCheckingFlag = false;
      				console.log("everything reset, bounced to default");
      			}
      		}

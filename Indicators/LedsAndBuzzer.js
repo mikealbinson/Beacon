@@ -45,8 +45,8 @@ exports.buzzAdmit = function(){
 exports.buzzNoAdmit = function(){
     buzzPin.enable(true);
     buzzNoAdmitNote1();
-    setTimeout(stopBuzz, 1000);
-    setTimeout(endBuzz, 1010);
+    timeoutOne = setTimeout(stopBuzz, 1000);
+    timeoutTwo = setTimeout(endBuzz, 1010);
 }
 
 /******************************************************************************
@@ -81,6 +81,8 @@ function ledIndicatorsOff(){
 
 exports.killNoAdmitIndicators = function(){
   redLed.write(0);
+  clearTimeout(timeoutOne);
+  clearTimeout(timeoutTwo);
   stopBuzz();
   endBuzz();
 }
