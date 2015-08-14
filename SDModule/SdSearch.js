@@ -24,7 +24,7 @@ exports.searchForTicketString = function (stringToFind, typeToSearch){
     var commaIndex2 = line.indexOf(',', commaIndex1+1);
     if (foundFlag == false){
       if (typeToSearch == 1){
-        __searchByTicketUUID(line, commaIndex1, commaIndex2, stringToFind);
+        __searchByTicketUUID(line, commaIndex1, commaIndex2, stringToFind, lengthString);
       }
       else if (typeToSearch == 2){
         __searchByTicketName(line, commaIndex1, commaIndex2, stringToFind);
@@ -93,7 +93,7 @@ function __resetFoundType (){
   exports.foundType = "none"
 }
 
-function __searchByTicketUUID(line, commaIndex1, commaIndex2, stringToFind){
+function __searchByTicketUUID(line, commaIndex1, commaIndex2, stringToFind, lengthString){
   var TicketNumberRetrieve = line.substring (0, commaIndex1);
   console.log(TicketNumberRetrieve);
   if (stringToFind == TicketNumberRetrieve){
